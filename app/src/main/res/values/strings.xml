@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">خدمتي</string>
+
+    <!-- Role select -->
+    <string name="role_title">مساعد الغرف الذكي</string>
+    <string name="role_slogan">امسح كود غرفتك - وخدمتي معاك فوراً</string>
+    <string name="role_guest">أنا ضيف الفندق</string>
+    <string name="role_guest_note">امسح بطاقة QR اللي في غرفتك</string>
+    <string name="role_host">أنا مالك الفندق</string>
+    <string name="role_host_note">إدارة الغرف والطلبات والقاعدة</string>
+
+    <!-- Guest home -->
+    <string name="guest_title">امسح كود الغرفة</string>
+    <string name="guest_hint">كل غرفة في الفندق عليها بطاقة QR على الباب أو المنضدة. امسحها بالكاميرا وسيفتح مساعد خدمتي فوراً.</string>
+    <string name="guest_scan">مسح رمز QR</string>
+    <string name="guest_demo_title">تجربة سريعة (بدون مسح)</string>
+    <string name="guest_demo_note">افتح دردشة غرفة تجريبية:</string>
+
+    <!-- Scanner -->
+    <string name="scan_title">مسح كود الغرفة</string>
+    <string name="scan_hint">وجّه الكاميرا على بطاقة QR الموجودة في الغرفة.</string>
+    <string name="scan_permission_note">نحتاج إذن الكاميرا لمسح بطاقة QR.</string>
+    <string name="scan_grant_camera">منح إذن الكاميرا</string>
+
+    <!-- Chat -->
+    <string name="chat_invalid_title">الكود غير مفعّل ⚠️</string>
+    <string name="chat_invalid_body">هذا الرمز لم يعد صالحاً. اتواصل مع الاستقبال للحصول على كود جديد أو للدخول اليدوي.</string>
+    <string name="chat_input_hint">اكتب رسالتك…</string>
+    <string name="chat_typing">خدمتي بيكتب…</string>
+
+    <!-- Quick chips -->
+    <string name="chip_wifi">📶 الواي فاي</string>
+    <string name="chip_amenities">🧺 طلب أغراض</string>
+    <string name="chip_service">🍽️ خدمة الغرف</string>
+    <string name="chip_clean">🧹 التنظيف</string>
+    <string name="chip_faq">❓ أسئلة شائعة</string>
+
+    <!-- Amenities bottom sheet -->
+    <string name="sheet_amenities_title">إيه اللي ناقصك في الغرفة؟</string>
+    <string name="amenity_towels">مناشف</string>
+    <string name="amenity_tp">ورق حمام</string>
+    <string name="amenity_shampoo">شامبو</string>
+    <string name="amenity_soap">صابون</string>
+    <string name="amenity_water">مياه معدنية</string>
+    <string name="amenity_pillows">مخدات</string>
+    <string name="amenity_blanket">بطانية</string>
+    <string name="sheet_confirm">إرسال الطلب</string>
+    <string name="sheet_pick_one">اختار واحد على الأقل</string>
+
+    <!-- Room service bottom sheet -->
+    <string name="sheet_food_title">اختار من المنيو</string>
+    <string name="food_breakfast">فطور</string>
+    <string name="food_burger">برجر</string>
+    <string name="food_falafel">ساندويتش فلافل</string>
+    <string name="food_pizza">بيتزا</string>
+    <string name="food_fish">سمك مشوي</string>
+    <string name="food_steak">شريحة لحم</string>
+    <string name="food_salad">سلطة</string>
+    <string name="food_juice">عصير طازج</string>
+    <string name="food_tea">شاي</string>
+    <string name="food_coffee">قهوة</string>
+
+    <!-- FAQ sheet -->
+    <string name="faq_sheet_title">الأسئلة الشائعة</string>
+    <string name="faq_q_wifi">إيه باسوورد الواي فاي؟</string>
+    <string name="faq_q_checkin">مواعيد الدخول والمغادرة؟</string>
+    <string name="faq_q_pool">مواعيد المسبح؟</string>
+    <string name="faq_q_breakfast">مواعيد الفطور؟</string>
+    <string name="faq_q_gym">الجيم فين؟</string>
+    <string name="faq_q_qibla">اتجاه القبلة؟</string>
+    <string name="faq_q_parking">المواقف فين؟</string>
+
+    <!-- Host login -->
+    <string name="host_login_title">دخول مالك الفندق</string>
+    <string name="host_login_note">نسخة تجريبية - الدخول مباشر بدون حساب (سيُستبدل بحساب حقيقي).</string>
+    <string name="host_login_button">دخول</string>
+
+    <!-- Host home -->
+    <string name="tab_rooms">الغرف والـ QR</string>
+    <string name="tab_requests">الطلبات</string>
+    <string name="tab_kb">القاعدة</string>
+    <string name="tab_escalations">التصعيدات</string>
+    <string name="rooms_hotel_label">الفندق</string>
+    <string name="rooms_add">إضافة غرفة</string>
+    <string name="room_generate">توليد QR</string>
+    <string name="room_rotate">تدوير الرمز</string>
+    <string name="room_save_png">حفظ PNG</string>
+    <string name="room_no_qr">لم يُولّد رمز بعد</string>
+    <string name="qr_link_label">رابط الغرفة</string>
+    <string name="qr_fallback_note">لو العميل ما عندوش التطبيق، الرابط يفتح له صفحة تحميل التطبيق أولاً</string>
+    <string name="add_room_number">رقم الغرفة (مثال: 306)</string>
+    <string name="add_room_floor">الطابق</string>
+    <string name="add_room_type">نوع الغرفة</string>
+    <string name="add_room_save">إضافة</string>
+
+    <!-- Requests inbox -->
+    <string name="req_none">لا توجد طلبات بعد</string>
+    <string name="req_mark_progress">قيد التنفيذ</string>
+    <string name="req_mark_done">تم</string>
+    <string name="req_room_prefix">غرفة</string>
+    <string name="req_open">مفتوح</string>
+    <string name="req_in_progress">قيد التنفيذ</string>
+    <string name="req_done">منجز</string>
+
+    <!-- KB editor -->
+    <string name="kb_add">إضافة إجابة</string>
+    <string name="kb_keywords">كلمات مفتاحية (افصل بينها بفاصلة)</string>
+    <string name="kb_answer_ar">الإجابة بالعربية</string>
+    <string name="kb_answer_en">الإجابة بالإنجليزية</string>
+    <string name="kb_save">حفظ</string>
+    <string name="kb_none">القاعدة فارغة - أضف إجابات للأسئلة الشائعة.</string>
+
+    <!-- Escalations -->
+    <string name="esc_none">لا توجد تصعيدات مفتوحة ✅</string>
+    <string name="esc_resolve">حل</string>
+
+    <!-- General -->
+    <string name="cancel">إلغاء</string>
+    <string name="lang_toggle">EN</string>
+</resources>

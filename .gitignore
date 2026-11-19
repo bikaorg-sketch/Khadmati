@@ -1,0 +1,23 @@
+# Built artifacts
+build/
+app/build/
+dist/
+captures/
+
+# Gradle
+.gradle/
+
+# Local machine config (SDK paths) — never commit
+local.properties
+
+# Signing secrets — never commit (keystore + credentials).
+# Losing the keystore means the app can never be updated; keep a
+# private offline backup instead of publishing it here.
+keystore/
+
+# IDE
+.idea/
+*.iml
+
+# Dev/test scratch artifacts
+screenshots/ui-dump.xml

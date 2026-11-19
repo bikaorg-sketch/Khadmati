@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">Khadmati</string>
+
+    <!-- Role select -->
+    <string name="role_title">Smart Room Assistant</string>
+    <string name="role_slogan">Scan your room code - Khadmati is with you instantly</string>
+    <string name="role_guest">I am a hotel guest</string>
+    <string name="role_guest_note">Scan the QR card inside your room</string>
+    <string name="role_host">I am the hotel owner</string>
+    <string name="role_host_note">Manage rooms, requests and the knowledge base</string>
+
+    <!-- Guest home -->
+    <string name="guest_title">Scan your room code</string>
+    <string name="guest_hint">Every room has a QR card on the door or desk. Scan it with the camera and Khadmati opens instantly.</string>
+    <string name="guest_scan">Scan QR code</string>
+    <string name="guest_demo_title">Quick demo (no scanning)</string>
+    <string name="guest_demo_note">Open a demo room chat:</string>
+
+    <!-- Scanner -->
+    <string name="scan_title">Scan room code</string>
+    <string name="scan_hint">Point the camera at the QR card in your room.</string>
+    <string name="scan_permission_note">We need camera permission to scan the QR card.</string>
+    <string name="scan_grant_camera">Grant camera permission</string>
+
+    <!-- Chat -->
+    <string name="chat_invalid_title">Code not active ⚠️</string>
+    <string name="chat_invalid_body">This code is no longer valid. Contact the front desk for a new one or for manual check-in.</string>
+    <string name="chat_input_hint">Type a message…</string>
+    <string name="chat_typing">Khadmati is typing…</string>
+
+    <!-- Quick chips -->
+    <string name="chip_wifi">📶 WiFi</string>
+    <string name="chip_amenities">🧺 Request items</string>
+    <string name="chip_service">🍽️ Room service</string>
+    <string name="chip_clean">🧹 Cleaning</string>
+    <string name="chip_faq">❓ FAQs</string>
+
+    <!-- Amenities bottom sheet -->
+    <string name="sheet_amenities_title">What do you need in the room?</string>
+    <string name="amenity_towels">Towels</string>
+    <string name="amenity_tp">Toilet paper</string>
+    <string name="amenity_shampoo">Shampoo</string>
+    <string name="amenity_soap">Soap</string>
+    <string name="amenity_water">Bottled water</string>
+    <string name="amenity_pillows">Pillows</string>
+    <string name="amenity_blanket">Blanket</string>
+    <string name="sheet_confirm">Send request</string>
+    <string name="sheet_pick_one">Pick at least one</string>
+
+    <!-- Room service bottom sheet -->
+    <string name="sheet_food_title">Pick from the menu</string>
+    <string name="food_breakfast">Breakfast</string>
+    <string name="food_burger">Burger</string>
+    <string name="food_falafel">Falafel sandwich</string>
+    <string name="food_pizza">Pizza</string>
+    <string name="food_fish">Grilled fish</string>
+    <string name="food_steak">Steak</string>
+    <string name="food_salad">Salad</string>
+    <string name="food_juice">Fresh juice</string>
+    <string name="food_tea">Tea</string>
+    <string name="food_coffee">Coffee</string>
+
+    <!-- FAQ sheet -->
+    <string name="faq_sheet_title">Frequently asked questions</string>
+    <string name="faq_q_wifi">What is the WiFi password?</string>
+    <string name="faq_q_checkin">Check-in and check-out times?</string>
+    <string name="faq_q_pool">Pool hours?</string>
+    <string name="faq_q_breakfast">Breakfast hours?</string>
+    <string name="faq_q_gym">Where is the gym?</string>
+    <string name="faq_q_qibla">Qibla direction?</string>
+    <string name="faq_q_parking">Where is parking?</string>
+
+    <!-- Host login -->
+    <string name="host_login_title">Hotel owner sign in</string>
+    <string name="host_login_note">Demo build - sign in directly (to be replaced with a real account).</string>
+    <string name="host_login_button">Sign in</string>
+
+    <!-- Host home -->
+    <string name="tab_rooms">Rooms &amp; QR</string>
+    <string name="tab_requests">Requests</string>
+    <string name="tab_kb">Knowledge</string>
+    <string name="tab_escalations">Escalations</string>
+    <string name="rooms_hotel_label">Hotel</string>
+    <string name="rooms_add">Add room</string>
+    <string name="room_generate">Generate QR</string>
+    <string name="room_rotate">Rotate code</string>
+    <string name="room_save_png">Save PNG</string>
+    <string name="room_no_qr">No code generated yet</string>
+    <string name="qr_link_label">Room link</string>
+    <string name="qr_fallback_note">If the guest doesn\'t have the app, the link opens a download page first</string>
+    <string name="add_room_number">Room number (e.g. 306)</string>
+    <string name="add_room_floor">Floor</string>
+    <string name="add_room_type">Room type</string>
+    <string name="add_room_save">Add</string>
+
+    <!-- Requests inbox -->
+    <string name="req_none">No requests yet</string>
+    <string name="req_mark_progress">In progress</string>
+    <string name="req_mark_done">Done</string>
+    <string name="req_room_prefix">Room</string>
+    <string name="req_open">Open</string>
+    <string name="req_in_progress">In progress</string>
+    <string name="req_done">Done</string>
+
+    <!-- KB editor -->
+    <string name="kb_add">Add answer</string>
+    <string name="kb_keywords">Keywords (comma separated)</string>
+    <string name="kb_answer_ar">Answer in Arabic</string>
+    <string name="kb_answer_en">Answer in English</string>
+    <string name="kb_save">Save</string>
+    <string name="kb_none">The knowledge base is empty - add answers to common questions.</string>
+
+    <!-- Escalations -->
+    <string name="esc_none">No open escalations ✅</string>
+    <string name="esc_resolve">Resolve</string>
+
+    <!-- General -->
+    <string name="cancel">Cancel</string>
+    <string name="lang_toggle">عربي</string>
+</resources>

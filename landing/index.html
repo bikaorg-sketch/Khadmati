@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>خدمتي — حمّل التطبيق</title>
+<style>
+  :root {
+    --gold: #7a5800;
+    --gold-dark: #5b4300;
+    --gold-soft: #ffdf9e;
+    --cream: #fff8ef;
+    --green: #41673c;
+    --ink: #201b11;
+    --muted: #4c4639;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans Arabic", "Tahoma", system-ui, sans-serif;
+    background: linear-gradient(180deg, var(--gold-soft), var(--cream) 45%);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(32, 27, 17, .12);
+    max-width: 400px;
+    width: 100%;
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .logo {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #fff;
+    font-size: 40px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+  }
+  h1 { font-size: 24px; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .room {
+    display: inline-block;
+    background: var(--gold-soft);
+    color: var(--gold-dark);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+  .status { margin: 22px 0 8px; font-size: 15px; font-weight: bold; color: var(--gold-dark); min-height: 24px; }
+  .button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 12px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  .primary { background: var(--gold); color: #fff; }
+  .secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+  .hint { margin-top: 18px; font-size: 12px; color: var(--muted); line-height: 1.8; }
+  .en { direction: ltr; unicode-bidi: embed; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">خ</div>
+  <h1>خدمتي — مساعد الغرف الذكي</h1>
+  <p class="sub">امسح كود غرفتك واستمتع بخدمة فورية: واي فاي، طلب أغراض، خدمة الغرف وأكثر</p>
+  <div class="room" id="roomLine" hidden></div>
+
+  <p class="status" id="status">جاري فتح التطبيق…</p>
+  <a class="button primary" id="storeBtn" href="#">حمّل التطبيق من Google Play</a>
+  <button class="button secondary" id="openBtn">عندك التطبيق؟ افتح خدمتي</button>
+
+  <p class="hint">
+    لو التطبيق مش متسطب، هنحوّلك تلقائياً لمتجر التطبيقات.<br />
+    بعد التحميل امسح كود الغرفة تاني وهيتفتح المساعد مباشرة.<br />
+    <span class="en">Khadmati — your in-room smart assistant</span>
+  </p>
+</div>
+
+<script>
+(function () {
+  var PACKAGE = "com.khadmati.app";
+  var PLAY_URL = "https://play.google.com/store/apps/details?id=" + PACKAGE;
+  var MARKET_URL = "market://details?id=" + PACKAGE;
+
+  // /r/{roomId}?t={token} — same URL the room QR encodes.
+  var match = location.pathname.match(/\/r\/([^/?#]+)/);
+  var roomId = match ? match[1] : null;
+  var token = new URLSearchParams(location.search).get("t") || "";
+
+  var roomLine = document.getElementById("roomLine");
+  if (roomId) {
+    roomLine.textContent = "غرفة: " + roomId.replace(/^room_[a-z]+_?/i, "").replace(/^\D+/, "") || roomId;
+    roomLine.hidden = false;
+  }
+
+  var status = document.getElementById("status");
+  var storeBtn = document.getElementById("storeBtn");
+  var openBtn = document.getElementById("openBtn");
+
+  function appLink() {
+    return "khadmati://r/" + roomId + (token ? "?t=" + encodeURIComponent(token) : "");
+  }
+
+  // Chrome on Android: opens the app if installed, otherwise navigates to
+  // S.browser_fallback_url (the store) automatically — this alone covers the
+  // "no app -> download" path on the most common browser.
+  function intentLink() {
+    return "intent://khadmati.app" + location.pathname + location.search +
+      "#Intent;scheme=https;package=" + PACKAGE +
+      ";S.browser_fallback_url=" + encodeURIComponent(PLAY_URL) + ";end";
+  }
+
+  function tryApp() {
+    if (!roomId) return false;
+    window.location.href = intentLink();
+    // Non-Chrome browsers ignore intent:// — try the custom scheme too.
+    setTimeout(function () {
+      if (document.visibilityState === "visible") {
+        window.location.href = appLink();
+      }
+    }, 400);
+    return true;
+  }
+
+  function goStore() {
+    // Native store app when possible, web listing otherwise.
+    var isAndroid = /android/i.test(navigator.userAgent);
+    window.location.href = isAndroid ? MARKET_URL : PLAY_URL;
+  }
+
+  storeBtn.href = PLAY_URL;
+  openBtn.addEventListener("click", tryApp);
+
+  // 1) Fire the app attempt immediately.
+  tryApp();
+
+  // 2) If the page is still visible after 1.4s, the app is not installed:
+  //    show the download state and auto-redirect to the store.
+  setTimeout(function () {
+    if (document.visibilityState !== "visible") return; // app took over
+    status.textContent = "التطبيق غير متسطب — جاري تحويلك للتحميل…";
+    var left = 3;
+    var timer = setInterval(function () {
+      if (document.visibilityState !== "visible") { clearInterval(timer); return; }
+      left -= 1;
+      if (left <= 0) { clearInterval(timer); goStore(); }
+      else { status.textContent = "جاري تحويلك لتحميل التطبيق خلال " + left + "…"; }
+    }, 1000);
+  }, 1400);
+})();
+</script>
+</body>
+</html>
